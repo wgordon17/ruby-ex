@@ -1,0 +1,16 @@
+#!/bin/bash -e
+# The assemble script builds the application artifacts from source and
+# places them into appropriate directories inside the image.
+
+gem install -h
+pwd
+ls -la
+
+echo "---> Updating bundler gem..."
+gem install bundler
+
+pwd
+ls -la
+
+# Execute the default S2I script
+source ${STI_SCRIPTS_PATH}/assemble
