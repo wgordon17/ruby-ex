@@ -3,10 +3,13 @@
 # places them into appropriate directories inside the image.
 
 echo "---> Updating bundler gem..."
+# disable the user install options in order to specify an install path
+# in a user-owned directory and specify the directory to use for the
+# binary files
 gem install bundler -v "~>1.0" \
-  --no-user-install  \ # disable user install in order to specify an install path
-  --install-dir /opt/app-root/gems  \ # install in a user-owned directory
-  --bindir /opt/app-root/bin  # specify the directory to use for the binary files
+  --no-user-install  \
+  --install-dir /opt/app-root/gems  \
+  --bindir /opt/app-root/bin
 
 # Update PATH to read from the above directory for binaries first
 export PATH=/opt/app-root/bin:$PATH
