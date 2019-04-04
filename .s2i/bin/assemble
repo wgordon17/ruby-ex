@@ -2,7 +2,7 @@
 # The assemble script builds the application artifacts from source and
 # places them into appropriate directories inside the image.
 
-gem install -h
+which bundle
 pwd
 ls -la
 
