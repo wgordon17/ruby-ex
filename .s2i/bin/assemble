@@ -7,6 +7,9 @@ if [ -z "$BUNDLER_INSTALL_VERSION" ]; then
   # from 2.X. Based on https://bundler.io/guides/bundler_2_upgrade.html,
   # unless the Gemfile.lock uses a 2.X version, it will fall back to use
   # the most current 1.X version installed
+  #
+  # Use BUNDLER_INSTALL_VERSION="~>1.0" in your build envionment variables
+  # If you're not using a 2.X in your Gemfile.lock.
   export BUNDLER_INSTALL_VERSION="~>2.0"
 fi
 
