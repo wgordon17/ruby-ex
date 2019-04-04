@@ -2,6 +2,9 @@
 # The assemble script builds the application artifacts from source and
 # places them into appropriate directories inside the image.
 
+printenv | sort
+echo $GEMHOME
+
 which bundle
 pwd
 ls -la
