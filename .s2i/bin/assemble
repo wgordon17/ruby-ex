@@ -5,11 +5,13 @@
 which bundle
 pwd
 ls -la
+bundle version
 
 echo "---> Updating bundler gem..."
-gem install bundler
+gem install bundler --install-dir /opt/rh/${RUBY_SCL}/root/usr/share/gems
 
 pwd
+bundle version
 ls -la
 ls -la .gem
 ls -la bin
