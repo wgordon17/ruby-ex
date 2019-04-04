@@ -10,16 +10,12 @@ if [ -z "$BUNDLER_INSTALL_VERSION" ]; then
   export BUNDLER_INSTALL_VERSION="~>2.0"
 fi
 
-echo "---> Updating bundler gem..."
+echo "---> Updating bundler gem to version $BUNDLER_INSTALL_VERSION ..."
 # Override the binary directory to ensure it's outside the $HOME directory
 gem install bundler -v "$BUNDLER_INSTALL_VERSION" --bindir /opt/app-root/bin
 
 # Update PATH to read from the above directory for binaries first
 export PATH=/opt/app-root/bin:$PATH
-
-pwd
-bundle version
-ls -la
 
 # Execute the default S2I script
 source ${STI_SCRIPTS_PATH}/assemble
