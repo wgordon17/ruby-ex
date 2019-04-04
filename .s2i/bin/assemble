@@ -11,6 +11,8 @@ gem install bundler
 
 pwd
 ls -la
+cat .gem
+ls -la bin
 
 # Execute the default S2I script
 source ${STI_SCRIPTS_PATH}/assemble
