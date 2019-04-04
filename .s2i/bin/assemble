@@ -8,7 +8,7 @@ ls -la
 bundle version
 
 echo "---> Updating bundler gem..."
-gem install bundler --install-dir /opt/rh/${RUBY_SCL}/root/usr/share/gems
+gem install --install-dir /opt/rh/${RUBY_SCL}/root/usr/share/gems bundler
 
 pwd
 bundle version
