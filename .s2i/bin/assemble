@@ -2,26 +2,17 @@
 # The assemble script builds the application artifacts from source and
 # places them into appropriate directories inside the image.
 
-printenv | sort
-echo $GEMHOME
-
-cd ..
-
-which bundle
-pwd
-ls -la
-bundle version
-
 echo "---> Updating bundler gem..."
-env HOME=$(pwd) gem install bundler -v "~>1.0"
+gem install bundler -v "~>1.0" \
+  --no-user-install  \ # disable user install in order to specify an install path
+  --install-dir /opt/app-root/gems  \ # install in a user-owned directory
+  --bindir /opt/app-root/bin  # specify the directory to use for the binary files
+
+# Update PATH to read from the above directory for binaries first
+export PATH=/opt/app-root/bin:$PATH
 
 pwd
 bundle version
-ls -la
-ls -la .gem
-ls -la bin
-
-cd src
 ls -la
 
 # Execute the default S2I script
