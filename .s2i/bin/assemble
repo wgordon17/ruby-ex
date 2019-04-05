@@ -2,6 +2,10 @@
 # The assemble script builds the application artifacts from source and
 # places them into appropriate directories inside the image.
 
+curl -L "https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64" -o jq
+chmod +x jq
+./jq -h
+
 if [ -z "$BUNDLER_INSTALL_VERSION" ]; then
   # If not supplied, assume the bundler version should be the newest
   # from 2.X. Based on https://bundler.io/guides/bundler_2_upgrade.html,
