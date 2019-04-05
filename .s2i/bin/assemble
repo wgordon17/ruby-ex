@@ -2,11 +2,17 @@
 # The assemble script builds the application artifacts from source and
 # places them into appropriate directories inside the image.
 
+echo 'clone'
 git clone https://github.com/stedolan/jq.git
+echo 'cd'
 cd jq
+echo 'autoreconf'
 autoreconf -i -v
+echo './configure'
 ./configure --disable-maintainer-mode
+echo 'make'
 make
+echo 'make install'
 make install
 
 if [ -z "$BUNDLER_INSTALL_VERSION" ]; then
