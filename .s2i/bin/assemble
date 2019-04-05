@@ -2,21 +2,6 @@
 # The assemble script builds the application artifacts from source and
 # places them into appropriate directories inside the image.
 
-echo 'wget'
-wget https://github.com/stedolan/jq/releases/download/jq-1.6/jq-1.6.tar.gz
-echo 'unzip'
-tar -xvzf jq-1.6.tar.gz
-echo 'cd'
-cd jq-1.6
-echo 'git module update'
-git submodule update --init
-echo './configure'
-./configure --with-oniguruma=builtin --disable-maintainer-mode
-echo 'make'
-make -j8
-echo 'make install'
-make install
-
 if [ -z "$BUNDLER_INSTALL_VERSION" ]; then
   # If not supplied, assume the bundler version should be the newest
   # from 2.X. Based on https://bundler.io/guides/bundler_2_upgrade.html,
