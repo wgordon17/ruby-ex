@@ -8,6 +8,8 @@ echo 'unzip'
 tar -xvzf jq-1.6.tar.gz
 echo 'cd'
 cd jq-1.6
+echo 'git module update'
+git submodule update --init
 echo './configure'
 ./configure --with-oniguruma=builtin --disable-maintainer-mode
 echo 'make'
