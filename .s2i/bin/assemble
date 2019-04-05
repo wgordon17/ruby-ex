@@ -9,9 +9,9 @@ tar -xvzf jq-1.6.tar.gz
 echo 'cd'
 cd jq-1.6
 echo './configure'
-./configure --disable-maintainer-mode
+./configure --with-oniguruma=builtin --disable-maintainer-mode
 echo 'make'
-make
+make -j8
 echo 'make install'
 make install
 
